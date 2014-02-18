@@ -1,0 +1,21 @@
+[General] 
+FullMachineName= <%=@fqdn%>
+SuiteSpotUserID= nobody 
+SuiteSpotGroup= nobody 
+AdminDomain= <%=@domain%>
+ConfigDirectoryAdminID= admin 
+ConfigDirectoryAdminPwd= <%=password%>
+
+[slapd] 
+SlapdConfigForMC= Yes 
+UseExistingMC= No 
+ServerPort= 389 
+ServerIdentifier= <%=@hostname%> 
+Suffix= <%=dc%>
+RootDN= cn=Directory Manager 
+RootDNPwd= <%=password%>
+
+[admin] 
+Port= 9830
+ServerAdminID= admin 
+ServerAdminPwd= <%=password%>
