@@ -1,0 +1,5 @@
+destination d_snoopy { file("<%= @logfile %>"); };
+
+filter f_snoopy { program("snoopy"); };
+
+log { source(s_local); filter(f_snoopy); destination(d_snoopy); flags(final); };
