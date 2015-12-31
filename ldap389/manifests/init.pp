@@ -1,4 +1,4 @@
-class 389_ldap (
+class ldap389 (
     $dc       = 'dc=search,dc=km',
     $password = 'secret',
     $instance = $hostname,
@@ -24,7 +24,7 @@ class 389_ldap (
             owner => root,
             group => root,
             require => Package['389-ds'],
-            content => template('389_ldap/config.ini.erb');
+            content => template('ldap389/config.ini.erb');
     }
 
     package {
