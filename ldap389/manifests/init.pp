@@ -20,9 +20,9 @@ class ldap389 (
 
     file {
         '/etc/dirsrv/config.ini':
-            mode => 0640,
-            owner => root,
-            group => root,
+            mode    => '0640',
+            owner   => root,
+            group   => root,
             require => Package['389-ds'],
             content => template('ldap389/config.ini.erb');
     }
@@ -34,15 +34,15 @@ class ldap389 (
 
     service {
         'dirsrv':
-            enable => true,
+            enable    => true,
             hasstatus => true,
-            ensure => 'running',
-            require => Exec['initial-config'];
+            ensure    => 'running',
+            require   => Exec['initial-config'];
         'dirsrv-admin':
-            enable => true,
+            enable    => true,
             hasstatus => true,
-            ensure => 'running',
-            require => Exec['initial-config'];
+            ensure    => 'running',
+            require   => Exec['initial-config'];
     }
 
     exec {
